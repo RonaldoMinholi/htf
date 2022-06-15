@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix = "c" url = "http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,12 +27,15 @@
 			<th>ds_email</th>
 		</tr>
 
+
+		<c:forEach item="${listaUsuarios}" var="usuario">
 		<tr>
-			<td>#1</td>
-			<td>Joao da Silva</td>
-			<td>joaodasilva@email.com</td>
+			<td>${usuario.cd_usuario}#</td>
+			<td>${usuario.nm_usuario}</td>
+			<td>${usuario.ds_email}</td>
+			<td><a href="usuario-excluir?cd=${usuario.cd_usuario}">Excluir</a></td>
 		</tr>
-		
+		</c:forEach>
 		<tr>
 			<td>#2</td>
 			<td>Maria das Gracas</td>

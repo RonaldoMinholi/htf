@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.fiap.htf.models.UsuarioModel;
+
 /**
  * Servlet implementation class UsuarioNovoServlet
  */
@@ -45,7 +47,17 @@ public class UsuarioNovoServlet extends HttpServlet {
 		String nome = request.getParameter("nomeUsuario");
 		String email = request.getParameter("email");
 		
-		System.out.println(" INSERT INTO USUARIO VALUES " + "," + email);
+		UsuarioModel usuarioModel = new UsuarioModel();
+		usuarioModel.setNm_usuario(nome);
+		usuarioModel.setDs_email(email);
+		
+		usuarioModel.setCd_usuario(1234);
+		
+		
+		request.setAttribute("usuarioModelAttr", usuarioModel);
+		
+		
+		System.out.println(" INSERT INTO USUARIO VALUES " + nome + "," + email);
 		
 		
 		request
