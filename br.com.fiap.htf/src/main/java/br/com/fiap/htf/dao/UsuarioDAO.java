@@ -1,0 +1,33 @@
+package br.com.fiap.htf.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.fiap.htf.BO.Usuario;
+
+public class UsuarioDAO {
+	
+	
+	public int Add(Usuario cat) {
+        DAO dao = new DAO();
+        try {
+            PreparedStatement stmt = dao.getConnection()
+            		.prepareStatement("INSERT INTO T_USUARIO VALUES (SQ_IDUSUARIO.NEXTVAL,?, ?, ?, ?, ?, ?, ?)");
+            stmt.setString(1, cat.getNm_usuario());
+            stmt.setFloat(2, cat.getVr_peso_inicio());
+            stmt.setString(3, cat.getDs_genero());
+            stmt.setFloat(4, cat.getVr_altura());
+            stmt.setString(5, cat.getDs_email());
+            stmt.setDate(6, cat.getDt_nascimento());
+            stmt.setInt(7, cat.getVr_numero_telefone());
+            
+            
+            return dao.executeCommand(stmt);
+        }catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+}

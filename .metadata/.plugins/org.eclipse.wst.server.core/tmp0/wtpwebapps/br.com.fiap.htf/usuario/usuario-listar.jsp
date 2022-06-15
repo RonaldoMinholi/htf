@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@ taglib prefix = "c" url = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html>
 <html>
@@ -24,23 +24,28 @@
 		<tr>
 			<th>cd_usuario</th>
 			<th>nm_usuario</th>
+			<th>vr_peso</th>
+			<th>ds_genero</th>
+			<th>vr_altura</th>
 			<th>ds_email</th>
+			<th>dt_nascimento</th>
+			<th>vr_numero_telefone</th>
 		</tr>
 
 
-		<c:forEach item="${listaUsuarios}" var="usuario">
-		<tr>
-			<td>${usuario.cd_usuario}#</td>
-			<td>${usuario.nm_usuario}</td>
-			<td>${usuario.ds_email}</td>
-			<td><a href="usuario-excluir?cd=${usuario.cd_usuario}">Excluir</a></td>
-		</tr>
+		<c:forEach items="${listaUsuarios}" var="usuario">
+			<tr>
+				<td>${usuario.cd_usuario}#</td>
+				<td>${usuario.nm_usuario}</td>
+				<td>${usuario.vr_peso}</td>
+				<td>${usuario.ds_genero}</td>
+				<td>${usuario.vr_altura}</td>
+				<td>${usuario.ds_email}</td>
+				<td>${usuario.dt_nascimento}</td>
+				<td>${usuario.vr_numero_telefone}</td>
+				<td><a href="usuario-excluir?cd=${usuario.cd_usuario}">Excluir</a></td>
+			</tr>
 		</c:forEach>
-		<tr>
-			<td>#2</td>
-			<td>Maria das Gracas</td>
-			<td>mariadasgracas@email.com</td>
-		</tr>
 
 	</table>
 

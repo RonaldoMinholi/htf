@@ -1,0 +1,28 @@
+package br.com.fiap.htf.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.fiap.htf.BO.Exercicio;
+
+
+public class ExercicioDAO {
+	
+	
+	public int Add(Exercicio cat) {
+        DAO dao = new DAO();
+        try {
+            PreparedStatement stmt = dao.getConnection()
+                    .prepareStatement("INSERT INTO T_EXERCICIO VALUES (SQ_IDEXERCICIO.NEXTVAL, ?, ?)");
+            stmt.setString(1, cat.getDs_exercicio());
+            stmt.setFloat(2, cat.getQt_caloria_perdida());
+            
+            return dao.executeCommand(stmt);
+        }catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+}

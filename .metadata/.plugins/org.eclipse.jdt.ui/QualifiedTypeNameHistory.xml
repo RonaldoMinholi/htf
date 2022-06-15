@@ -5,4 +5,11 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="br.com.fiap.htf.models.UsuarioModel"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="br.com.fiap.htf.BO.Alimento"/>
+    <fullyQualifiedTypeName name="br.com.fiap.htf.BO.Exercicio"/>
+    <fullyQualifiedTypeName name="br.com.fiap.htf.BO.Login"/>
+    <fullyQualifiedTypeName name="br.com.fiap.htf.BO.Peso"/>
+    <fullyQualifiedTypeName name="br.com.fiap.htf.BO.Treino"/>
+    <fullyQualifiedTypeName name="br.com.fiap.htf.BO.Usuario"/>
+    <fullyQualifiedTypeName name="br.com.fiap.htf.dao.LoginDAO"/>
 </qualifiedTypeNameHistroy>

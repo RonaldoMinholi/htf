@@ -41,10 +41,12 @@ public class UsuarioListarServlet extends HttpServlet {
 		
 		
 		List<UsuarioModel> usuarios = new ArrayList<>();
-		usuarios.add( new UsuarioModel(1, "Antonio da Silva", "antonio@email.com") );
-		usuarios.add( new UsuarioModel(2, "Beatriz de Souza", "beatriz@email.com") );
-		usuarios.add( new UsuarioModel(3, "Carlos Machado", "carlos@email.com") );
-		usuarios.add( new UsuarioModel(4, "Daniela Pereira", "daniela@email.com") );
+		usuarios.add( new UsuarioModel(1, "Antonio da Silva", 70, "Masculino", 177, "antonio@email.com", null, "11991999191") );
+		usuarios.add( new UsuarioModel(1, "Beatriz de Souza", 65, "Feminino", 177, "beatrizdesouza@email.com", null, "11991999292") );
+		usuarios.add( new UsuarioModel(1, "Camila Machado", 60, "Feminino", 177, "camilamachado@email.com", null, "11991999393") );
+		usuarios.add( new UsuarioModel(1, "Daniela Pereira", 56, "Feminino", 177, "danielapereira@email.com", null, "11991999494") );
+		usuarios.add( new UsuarioModel(1, "Eduardo Alcantara", 78, "Masculino", 177, "eduardoalcantara@email.com", null, "11991999595") );
+		
 		
 		request.setAttribute("listaUsuarios", usuarios);
 		

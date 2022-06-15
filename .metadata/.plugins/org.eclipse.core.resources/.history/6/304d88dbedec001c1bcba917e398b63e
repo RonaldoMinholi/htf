@@ -1,0 +1,25 @@
+package br.com.fiap.htf.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class TreinoDAO {
+
+	
+	public int Add(Treino cat) {
+        DAO dao = new DAO();
+        try {
+            PreparedStatement stmt = dao.getConnection()
+                    .prepareStatement("INSERT INTO T_TREINO VALUES (SQ_IDTREINO.NEXTVAL, ?, ?)");
+            stmt.setDate(1, cat.getDt_treino());
+            stmt.setFloat(2, cat.getVr_batimento_card());
+            
+            return dao.executeCommand(stmt);
+        }catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return 0;
+    }
+	
+}
