@@ -1,0 +1,5 @@
+package br.com.fiap.htf.models;
+
+public class UsuarioModel {
+
+}
